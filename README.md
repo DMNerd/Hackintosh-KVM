@@ -20,7 +20,7 @@ virsh --connect qemu:///system define macOS.xml
 
 ## [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)
 
-Version: 0.9.5
+Version: 0.9.6
 
 OpenCanopy bootscreen is enabled and I am using the modern iconset.
 
