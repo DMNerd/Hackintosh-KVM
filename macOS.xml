@@ -13,8 +13,8 @@
   <vcpu placement='static'>6</vcpu>
   <os>
     <type arch='x86_64' machine='pc-q35-4.2'>hvm</type>
-    <loader readonly='yes' type='pflash'>/home/dmnerd/GitHub/Hackintosh/Resources/OVMF/OVMF_CODE.fd</loader>
-    <nvram>/home/dmnerd/GitHub/Hackintosh/Resources/OVMF/OVMF_VARS.fd</nvram>
+    <loader readonly='yes' type='pflash'>/home/dmnerd/GitHub/Hackintosh-KVM/Resources/OVMF/OVMF_CODE.fd</loader>
+    <nvram>/home/dmnerd/GitHub/Hackintosh-KVM/Resources/OVMF/OVMF_VARS.fd</nvram>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -34,7 +34,7 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw' cache='writeback'/>
-      <source file='/home/dmnerd/Documents/GitHub/Hackintosh/Resources/fetchmacos/BaseSystem.img'/>
+      <source file='/home/dmnerd/Documents/GitHub/Hackintosh-KVM/Resources/fetchmacos/BaseSystem.img'/>
       <target dev='sda' bus='sata'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
@@ -137,7 +137,7 @@
       <source>
         <address domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
       </source>
-      <rom file='/home/dmnerd/GitHub/Hackintosh/Resources/vBios/amd.rom'/>
+      <rom file='/home/dmnerd/GitHub/Hackintosh-KVM/Resources/vBios/amd.rom'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
