@@ -84,7 +84,7 @@
     </controller>
     <controller type='pci' index='9' model='pcie-to-pci-bridge'>
       <model name='pcie-pci-bridge'/>
-      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
@@ -135,7 +135,7 @@
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
+        <address domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
       </source>
       <rom file='/home/dmnerd/GitHub/Hackintosh-KVM/Resources/vBios/amd.rom'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0' multifunction='on'/>
@@ -143,7 +143,7 @@
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
+        <address domain='0x0000' bus='0x03' slot='0x00' function='0x1'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x1'/>
     </hostdev>
