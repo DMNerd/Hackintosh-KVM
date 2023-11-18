@@ -47,6 +47,8 @@ Resources used:
 
 [Kholias OSX-KVM](<https://github.com/kholia/OSX-KVM>)
 
+[Pavos Hackinabox](<https://github.com/Pavo-IM/Hackinabox>)
+
 [Bryan Steiners GPU Passtrough guide](<https://github.com/bryansteiner/gpu-passthrough-tutorial>)
 
 [Complete single GPU Passtrough guide](<https://github.com/QaidVoid/Complete-Single-GPU-Passthrough>)
