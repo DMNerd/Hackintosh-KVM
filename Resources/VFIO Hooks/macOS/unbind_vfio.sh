@@ -17,7 +17,7 @@ modprobe -r vfio
 modprobe amdgpu
 
 # Rebind framebuffer to host
-echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
+#echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
 
 # Bind VTconsoles: might not be needed
 echo 1 > /sys/class/vtconsole/vtcon0/bind
