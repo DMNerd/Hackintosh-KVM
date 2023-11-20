@@ -4,12 +4,11 @@
   <title>macOS</title>
   <memory unit='KiB'>8388608</memory>
   <currentMemory unit='KiB'>8388608</currentMemory>
-  <vcpu placement='static'>4</vcpu>
+  <vcpu placement='static'>6</vcpu>
   <os>
     <type arch='x86_64' machine='pc-q35-6.0'>hvm</type>
-    <loader readonly='yes' type='pflash'>/home/dmnerd/OSX-KVM/OVMF_CODE.fd</loader>
-    <nvram>/home/dmnerd/OSX-KVM/OVMF_VARS.fd</nvram>
-    <boot dev='hd'/>
+    <loader readonly='yes' type='pflash'>/home/dmnerd/GitHub/Hackintosh-KVM/Resources/OVMF/OVMF_CODE.fd</loader>
+    <nvram>/home/dmnerd/GitHub/Hackintosh-KVM/Resources/OVMF/OVMF_VARS.fd</nvram>
   </os>
   <features>
     <acpi/>
@@ -27,9 +26,10 @@
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
-      <driver name='qemu' type='raw' cache='writeback'/>
+      <driver name='qemu' type='raw' cache='unsafe'/>
       <source file='/home/dmnerd/GitHub/Hackintosh-KVM/Resources/fetchmacos/BaseSystem.img'/>
       <target dev='sdb' bus='sata'/>
+      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='2'/>
     </disk>
     <controller type='sata' index='0'>
@@ -127,23 +127,40 @@
       <address type='pci' domain='0x0000' bus='0x09' slot='0x01' function='0x0'/>
     </video>
     <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
       </source>
-      <rom file='/home/dmnerd/GitHub/Hackintosh-KVM/Resources/vBios/amd.rom'/>
+      <rom file='/home/dmnerd/GitHub/Hackintosh-KVM/Resources/vBios/amd2.rom'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x03' slot='0x00' function='0x1'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
     </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x0781'/>
+        <product id='0x5567'/>
+      </source>
+      <boot order='1'/>
+      <address type='usb' bus='0' port='1'/>
+    </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x0b05'/>
+        <product id='0x17cb'/>
+      </source>
+      <address type='usb' bus='0' port='2'/>
     </hostdev>
     <watchdog model='itco' action='reset'/>
     <memballoon model='none'/>
